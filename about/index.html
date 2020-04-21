@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script type="text/javascript" src="/love.js"></script>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content=#58b77a>
@@ -15,13 +16,13 @@
     theme: 'lx',
     version: '0.3.9',
     localsearch:{
-      "enable": false,
+      "enable": true,
       "trigger": "auto",
       "top_n_per_article": 1,
       "unescape": false,
       "preload": false
       },
-    path: 'null'
+    path: 'search.xml'
   };
 </script>
 
@@ -55,14 +56,48 @@
 	    jSideSticky: true,
 	    jSideSkin: "greenish",
 	     });
-	}); 
+	});
 	</script>
-  
+  <!--Google_Analytics-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=..."></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '...');
+</script>
+<!--baidu_analytics-->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?...";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
 <meta name="generator" content="Hexo 4.2.0"></head>
 <body>
 <div  class="single">
+<a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i></a>
+<div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Search..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
 
 <div id="page">
 <div id="lx-aside" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/post_cover.jpeg)" data-stellar-background-ratio="0.5">
@@ -72,7 +107,9 @@
     <span>2020-04-20</span>
     <h2>个人简历</h2>
     
-    </div>
+    <div class="social-links">
+    <a href="https://weibo.com/u/6603316751" target="_blank"><i class="fa fa-weibo fa-fw"></i></a>
+</div></div>
 </div>
 </div>
 
@@ -118,7 +155,7 @@
   </div>
 </div>
 </div>
-
+<div class="comment"><div id="comments"></div></div>
 <footer>
   <div>
   Copyright &copy; 2019.<a href="/">謡了謡頭</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
@@ -131,14 +168,14 @@
     <div class="hamburger-box">
       <div class="hamburger-inner"></div>
     </div>
-</button> 
+</button>
 <div class="menu visibility">
   <div class="menu-head">
     <span class="layer">
       <div class="col">
         <div class="row for-pic">
           <div class="profile-pic">
-            <a href="/"><img src="/images/zipai.jpg" alt="謡了謡頭"/></a>
+            <a href="/"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587469103294&di=a36af35772671652bbc92bcc0268e9ba&imgtype=0&src=http%3A%2F%2Fimg.08087.cc%2Fuploads%2F20191221%2F21%2F1576933758-XrlzOjnuyS.jpg" alt="謡了謡頭"/></a>
           </div>
         </div>
         <div class="row for-name">
@@ -199,7 +236,9 @@
 	});
 }());
 </script>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/local.search.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
 </html>
+  <script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script>
