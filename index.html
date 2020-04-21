@@ -119,12 +119,28 @@
 
   <div class="lx-entry padding">
     <div>
-      <h2 class="title"><a href="/2019/05/23/one/">第一篇文章</a></h2>
-      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2019-05-23</span>
-      <p><h3 id="你好啊"><a href="#你好啊" class="headerlink" title="你好啊"></a>你好啊</h3><p>123123123</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&#39;hello world&#39;)</span><br></pre></td></tr></table></figure>
+      <h2 class="title"><a href="/2020/04/21/one/">第一篇文章</a></h2>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-21</span>
+      <p><h2 id="hugo博客搭建"><a href="#hugo博客搭建" class="headerlink" title="hugo博客搭建"></a>hugo博客搭建</h2><h3 id="下载安装hugo"><a href="#下载安装hugo" class="headerlink" title="下载安装hugo"></a>下载安装hugo</h3><p>首先下载hugo<a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">hugo下载地址</a>下载好解压安装  </p>
+<h3 id="hugo生成本地博客"><a href="#hugo生成本地博客" class="headerlink" title="hugo生成本地博客"></a>hugo生成本地博客</h3><p>在hugo文件下cmd打开控制台，然后输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo new site hugo_blog（自己定义博客名）</span><br></pre></td></tr></table></figure>
+<p>然后切换到生成的hugo_blog(博客的根目录)进行下一步操作</p>
+<h3 id="设置博客主题"><a href="#设置博客主题" class="headerlink" title="设置博客主题"></a>设置博客主题</h3><p><a href="https://themes.gohugo.io/" target="_blank" rel="noopener">hugo主题下载地址</a>在hugo_blog目录下的themes执行git clone (主题的git仓库地址)<br>新下载的主题就存放到hugo_blog目录下的themes文件夹下</p>
+<h4 id="新建文章及本地启动博客"><a href="#新建文章及本地启动博客" class="headerlink" title="新建文章及本地启动博客"></a>新建文章及本地启动博客</h4><p>在博客根目录cmd进入控制台输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo new day01.md</span><br></pre></td></tr></table></figure>
+<p>创建新的文档，写入内容<br>本地启动，输入启动命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo server</span><br></pre></td></tr></table></figure>
+<p>复制生成的本地网址<a href="http://localhost:1313/到浏览器中，查看站点是否运行成功" target="_blank" rel="noopener">http://localhost:1313/到浏览器中，查看站点是否运行成功</a><br>注意：每次修改完md文件中的内容后，需要重新在cmd中输入命令hugo server    </p>
+<h3 id="将博客部署到服务器"><a href="#将博客部署到服务器" class="headerlink" title="将博客部署到服务器"></a>将博客部署到服务器</h3><p>打开gitee 新建一个git仓库<br>需要注意：在是否开源要选择“公开” 否则别人无法访问<br>配置config.toml:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#指定主题</span><br><span class="line">theme &#x3D; &quot;(替换成你下载好的主题名)&quot;</span><br></pre></td></tr></table></figure>
+<p>在博客根目录下输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo</span><br></pre></td></tr></table></figure>
+<p>执行完毕后，会在hugo文件夹下自动生成一个public文件夹。<br>打开博客目录，cmd进入控制台按照git提示命令依此输入命令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd public</span><br><span class="line">git init</span><br><span class="line">git add -A</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin (你的git仓库地址)</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>提交成功  </p>
+<h3 id="开启码云的page服务"><a href="#开启码云的page服务" class="headerlink" title="开启码云的page服务"></a>开启码云的page服务</h3><p>点击启动即可</p>
 </p>
-      <div class="post-button"><a class="btn" href="/2019/05/23/one/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
+      <div class="post-button"><a class="btn" href="/2020/04/21/one/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>Read More</a></div>
     </div>
   </div>
 
