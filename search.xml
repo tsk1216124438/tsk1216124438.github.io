@@ -50,6 +50,7 @@
 <p>然后在页面注册组件标签</p>
 <p><img src="https://i.loli.net/2020/04/23/q6N8mjrD2oPbpVx.png" alt></p>
 <p>最后在<template>标签里引入</template></p>
+<p><img src="https://i.loli.net/2020/04/23/eiVjcHXzurnRhDw.png" alt></p>
 <p>面包屑导航</p>
 <p><img src="https://i.loli.net/2020/04/23/DRFh5paEkucT8Gd.png" alt></p>
 <p>最后定义面包屑变量</p>
