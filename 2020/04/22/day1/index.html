@@ -55,7 +55,7 @@
 	$(".menu-container").jSideMenu({
 	    jSidePosition: "position-right",
 	    jSideSticky: true,
-	    jSideSkin: "greenish",
+	    jSideSkin: "endless-river",
 	     });
 	});
 	</script>
@@ -119,6 +119,7 @@
     <div class="lx-entry padding">
       <div>
         <h2 id="vue语法"><a href="#vue语法" class="headerlink" title="vue语法"></a>vue语法</h2><p>Vue.js是前端的主流框架之一，和angular、react.js一起，并成为前端三大主流框架   </p>
+<a id="more"></a>
 <h4 id="vue常用属性："><a href="#vue常用属性：" class="headerlink" title="vue常用属性："></a>vue常用属性：</h4><p>data: 就是vue的model，是存放数据的，属性值是一个对象或者是一个函数，在组件中的data是一个函数<br>methods: 是vue中的事件方法  </p>
 <h4 id="Vue的基础语法介绍"><a href="#Vue的基础语法介绍" class="headerlink" title="Vue的基础语法介绍"></a>Vue的基础语法介绍</h4><ul>
 <li>v-model:主要是在表单元素的双向数据绑定中使用。比如文本框、下拉框、单选、复选、textarea等等。因为v-model是双向绑定的，<br>所以文本框输入以后，模型也会发生改变。反之模型改变了文本框也会改变。  </li>
@@ -147,12 +148,12 @@
 <div class="lx-navigation">
 	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="#">
+		<a class="copy" href="/2020/04/23/day2/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Next</span>
-						<h3>没有更新的文章</h3>
+						<h3>第三篇文章</h3>
 					</div>
 				</div>
 			</div>
@@ -228,12 +229,14 @@ setInterval("createtime()",250);
   <ul class="menu-items">
     <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
     <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-    
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-th-list fa-fw"></i>分类</span>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/djang%E3%80%81vue/">djang、vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/djang%E6%B3%A8%E5%86%8C%E5%8A%A0%E5%AF%86/">djang注册加密</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hugo/">hugo</a></li></ul>
+    </li>
     <li class="has-sub"><span class="dropdown-heading">
       <i class="fa fa-bookmark fa-fw"></i>页面</span>
         <ul>
-          <li><a href="/liu/">留言板</a></li>
-        <li><a href="/about/">个人简历</a></li>
+          <li><a href="/about/">个人简历</a></li>
         </ul>
     </li>
     <li class="has-sub"><span class="dropdown-heading">

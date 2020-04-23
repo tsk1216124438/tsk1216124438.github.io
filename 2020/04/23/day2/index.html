@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+  <script type="text/javascript" src="/love.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content=#58b77a>
+  <title>第三篇文章 | 謡了謡頭</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="謡了謡頭">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'lx',
+    version: '0.3.9',
+    localsearch:{
+      "enable": true,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: 'search.xml'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
+  <style type="text/css">
+    pre,
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    h1, h2, h3, h4, h5, figure {
+      font-family: sans-serif;
+    }
+    .menu-container{
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "endless-river",
+	     });
+	});
+	</script>
+  <!--Google_Analytics-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=..."></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '...');
+</script>
+<!--baidu_analytics-->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?82c8f83fbba48234e32e168ea584d5ec";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+<div class="single">
+<a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i></a>
+<div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Search..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+<div id="page">
+<div id="lx-aside" style="background-image: url(http://pic.90sjimg.com/back_pic/qk/back_origin_pic/00/01/90/7b96b74a0a2b615089859de45551ecc0.jpg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><a href="/"><img src="/images/zipai.jpg"></a></div>
+    <span>2020-04-23</span>
+    <h2>第三篇文章</h2>
+    
+    <div class="social-links">
+    <a href="https://weibo.com/u/6603316751" target="_blank"><i class="fa fa-weibo fa-fw"></i></a>
+</div></div>
+</div>
+</div>
+
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <h2 id="Django后端"><a href="#Django后端" class="headerlink" title="Django后端"></a>Django后端</h2><p>后端实现简单用户名去重,注册密码md5加密  </p>
+<ul>
+<li><p>先导入model中创建表  *号代表所有</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from myapp.models import *</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再导入hash库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#导入加密库</span><br><span class="line">import hashlib</span><br></pre></td></tr></table></figure></li>
+<li><p>生成md5加密方法视图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># md5加密方法</span><br><span class="line">def make_password(mypass):</span><br><span class="line"></span><br><span class="line">    # 生成md5对象</span><br><span class="line">    md5 &#x3D; hashlib.md5()</span><br><span class="line"></span><br><span class="line">    # 转码操作</span><br><span class="line">    mypass_utf8 &#x3D; str(mypass).encode(encoding&#x3D;&quot;utf-8&quot;)</span><br><span class="line"></span><br><span class="line">    # 加密操作</span><br><span class="line">    md5.update(mypass_utf8)</span><br><span class="line"></span><br><span class="line">    # 返回密文</span><br><span class="line">    return md5.hexdigest()</span><br></pre></td></tr></table></figure></li>
+<li><p>注册视图  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># 注册接口</span><br><span class="line">class Register(APIView):</span><br><span class="line">    def get(self,request):</span><br><span class="line"></span><br><span class="line">        # 接收参数</span><br><span class="line">        username &#x3D; request.GET.get(&#39;username&#39;,None)</span><br><span class="line">        password &#x3D; request.GET.get(&#39;password&#39;,None)</span><br><span class="line"></span><br><span class="line">        # 排重</span><br><span class="line">        user &#x3D; User.objects.filter(username&#x3D;username).first()</span><br><span class="line"></span><br><span class="line">        if user:</span><br><span class="line">            return Response(&#123;</span><br><span class="line">                &#39;code&#39;: 400,</span><br><span class="line">                &#39;message&#39;:&#39;用户名重复&#39;</span><br><span class="line">            &#125;)</span><br><span class="line">        # 入库操作</span><br><span class="line">        user &#x3D; User(username&#x3D;username,password&#x3D;make_password(password))</span><br><span class="line">        # 保存结果</span><br><span class="line">        user.save()</span><br><span class="line"></span><br><span class="line">        return Response(&#123;</span><br><span class="line">            &#39;code&#39;:200,</span><br><span class="line">            &#39;message&#39;:&#39;注册成功&#39;</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="Vue前端"><a href="#Vue前端" class="headerlink" title="Vue前端"></a>Vue前端</h2><p>前端使用正则判断手机号码是否合法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;&#x2F;div&gt;</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;table&gt;</span><br><span class="line">					&lt;tr&gt;</span><br><span class="line">						&lt;td&gt;</span><br><span class="line">							用户名:</span><br><span class="line">						&lt;&#x2F;td&gt;</span><br><span class="line">						&lt;td&gt;</span><br><span class="line">							&lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;username&quot; placeholder&#x3D;&quot;请输入用户名&quot;&gt;</span><br><span class="line">						&lt;&#x2F;td&gt;</span><br><span class="line">					&lt;&#x2F;tr&gt;</span><br><span class="line">					&lt;tr&gt;</span><br><span class="line">						&lt;td&gt;</span><br><span class="line">							密码:</span><br><span class="line">						&lt;&#x2F;td&gt;</span><br><span class="line">						&lt;td&gt;</span><br><span class="line">							&lt;input type&#x3D;&quot;password&quot; v-model&#x3D;&quot;password&quot;&gt;</span><br><span class="line">						&lt;&#x2F;td&gt;</span><br><span class="line">					&lt;&#x2F;tr&gt;</span><br><span class="line">					&lt;tr&gt;</span><br><span class="line">						&lt;td&gt;</span><br><span class="line">							手机号:</span><br><span class="line">						&lt;&#x2F;td&gt;</span><br><span class="line">						&lt;td&gt;</span><br><span class="line">							&lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;phone&quot;&gt;</span><br><span class="line">						&lt;&#x2F;td&gt;</span><br><span class="line">					&lt;&#x2F;tr&gt;</span><br><span class="line">					&lt;tr&gt;</span><br><span class="line">						&lt;td&gt;&lt;&#x2F;td&gt;</span><br><span class="line">						&lt;td&gt;</span><br><span class="line">							&lt;Button @click&#x3D;&quot;submit&quot; color&#x3D;&quot;blue&quot;&gt;提交&lt;&#x2F;Button&gt;</span><br><span class="line">							&lt;Button @click&#x3D;&quot;reginfo&quot; color&#x3D;&quot;red&quot;&gt;重置&lt;&#x2F;Button&gt;</span><br><span class="line">						&lt;&#x2F;td&gt;											</span><br><span class="line">					&lt;&#x2F;tr&gt;</span><br><span class="line">				&lt;&#x2F;table&gt;</span><br><span class="line">			&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;导入组件</span><br><span class="line">import myheader from &#39;.&#x2F;myheader&#39;</span><br><span class="line">import myfooter from &#39;.&#x2F;myfooter&#39;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">	  msg: &quot;这是一个变量&quot;,</span><br><span class="line">	  &#x2F;&#x2F;表单数据</span><br><span class="line">	  username:&#39;&#39;,</span><br><span class="line">	  password:&#39;&#39;,</span><br><span class="line">	  phone:&#39;&#39;,</span><br><span class="line">	  &#x2F;&#x2F;面包屑导航变量</span><br><span class="line">	  datas:[&#123;title:&#39;首页&#39;,route:&#123;name:&#39;index&#39;&#125;&#125;,&#123;title:&#39;注册页面&#39;&#125;]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#x2F;&#x2F;注册组件标签</span><br><span class="line">  components:&#123;</span><br><span class="line">	  &#39;myheader&#39;:myheader,</span><br><span class="line">	  &#39;myfooter&#39;:myfooter,</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted:function()&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line"></span><br><span class="line">	  &#x2F;&#x2F;重置按钮</span><br><span class="line">	  reginfo:function()&#123;</span><br><span class="line">		  this.username &#x3D; &quot;&quot;;</span><br><span class="line">		  this.password &#x3D; &quot;&quot;;</span><br><span class="line">		  this.phone &#x3D; &quot;&quot;;</span><br><span class="line"></span><br><span class="line">	  &#125;,</span><br><span class="line"></span><br><span class="line">	  &#x2F;&#x2F;定义提交事件</span><br><span class="line">	  submit:function()&#123;</span><br><span class="line"></span><br><span class="line">		  &#x2F;&#x2F;非空验证</span><br><span class="line">		  if(this.username&#x3D;&#x3D; &#39;&#39;)&#123;</span><br><span class="line"></span><br><span class="line">			  this.$Message(&#39;您没有输入用户名&#39;)</span><br><span class="line">			  return false</span><br><span class="line">		  &#125;</span><br><span class="line">		  if(this.password&#x3D;&#x3D;&#39;&#39;)&#123;</span><br><span class="line">			  this.$Message(&#39;密码不能为空&#39;)</span><br><span class="line">			  return false</span><br><span class="line">		  &#125;</span><br><span class="line">          &#x2F;&#x2F;手机号码使用正则匹配</span><br><span class="line">		  if (!&#x2F;^((1[3,5,8][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d&#123;8&#125;$&#x2F;.test(this.phone)) &#123;</span><br><span class="line">                alert(&#39;手机号格式不正确&#39;);</span><br><span class="line">                return false;</span><br><span class="line">              &#125;</span><br><span class="line"></span><br><span class="line">		  &#x2F;&#x2F;请求后台接口</span><br><span class="line">		  this.axios.get(&#39;http:&#x2F;&#x2F;127.0.0.1:8000&#x2F;register&#x2F;&#39;,&#123;params:&#123;username:this.username,password:this.password,phone:this.phone&#125;&#125;).then((result)&#x3D;&gt;&#123;</span><br><span class="line">			  console.log(result);</span><br><span class="line">        this.$Message(result.data.message)</span><br><span class="line">		  &#125;)</span><br><span class="line">	  &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p>前端组件化操作：<br>将需要嵌套的组件导入<br><img src="/.com//01.png" alt></p>
+</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>没有更新的文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/04/22/day1/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>第二篇文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+<div class="comment"><div id="comments"></div></div>
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">謡了謡頭</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+<!--    添加博客运行时间-->
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("04/20/2020 17:38:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+  </div>
+
+</footer>
+
+</div>
+
+<button class="hamburger hamburger--arrow-r" type="button">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</button>
+<div class="menu visibility">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587469103294&di=a36af35772671652bbc92bcc0268e9ba&imgtype=0&src=http%3A%2F%2Fimg.08087.cc%2Fuploads%2F20191221%2F21%2F1576933758-XrlzOjnuyS.jpg" alt="謡了謡頭"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>謡了謡頭</p>
+          <span class="tagline">心若在 梦就在</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-th-list fa-fw"></i>分类</span>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/djang%E3%80%81vue/">djang、vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/djang%E6%B3%A8%E5%86%8C%E5%8A%A0%E5%AF%86/">djang注册加密</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hugo/">hugo</a></li></ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>页面</span>
+        <ul>
+          <li><a href="/about/">个人简历</a></li>
+        </ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-link fa-fw"></i>友链</span>
+        <ul>
+          <li> <a href="https://tian_kang_kang.gitee.io/my_technology_blog/" target="_blank">hugo</a></li>
+        </ul>
+    </li>
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.easing.min.js"></script>
+<script>
+(function () {
+	"use strict";
+	var goToTop = function() {
+		$(".js-gotop").on("click", function(event){
+			event.preventDefault();
+			$("html, body").animate({
+				scrollTop: $("html").offset().top
+			}, 500, "easeInOutExpo");
+			return false;
+		});
+		$(window).scroll(function(){
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$(".js-top").addClass("active");
+			} else {
+				$(".js-top").removeClass("active");
+			}
+		});
+	};
+	$(function(){
+		goToTop();
+	});
+}());
+</script>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/local.search.js"></script>
+<script src="//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'tx1p9hlbePoCoCfYbwJrNGiL-gzGzoHsz',
+    appKey: '68K06k8LVetqJAwcW7eKYcmL',
+    placeholder: 'Say something.',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    lang: 'zh-cn' || 'zh-cn'
+  });
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+  <script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script>
+  <!--单击显示文字-->
+  <script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>
+  <!--动态线条背景-->
+  <script type="text/javascript"
+    color="120,100,110" opacity='1' zIndex="-2" count="500" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>

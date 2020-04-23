@@ -55,7 +55,7 @@
 	$(".menu-container").jSideMenu({
 	    jSidePosition: "position-right",
 	    jSideSticky: true,
-	    jSideSkin: "greenish",
+	    jSideSkin: "endless-river",
 	     });
 	});
 	</script>
@@ -210,12 +210,14 @@ setInterval("createtime()",250);
   <ul class="menu-items">
     <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
     <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-    
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-th-list fa-fw"></i>分类</span>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/djang%E3%80%81vue/">djang、vue</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/djang%E6%B3%A8%E5%86%8C%E5%8A%A0%E5%AF%86/">djang注册加密</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hugo/">hugo</a></li></ul>
+    </li>
     <li class="has-sub"><span class="dropdown-heading">
       <i class="fa fa-bookmark fa-fw"></i>页面</span>
         <ul>
-          <li><a href="/liu/">留言板</a></li>
-        <li><a href="/about/">个人简历</a></li>
+          <li><a href="/about/">个人简历</a></li>
         </ul>
     </li>
     <li class="has-sub"><span class="dropdown-heading">
