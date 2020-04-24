@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content=#58b77a>
-  <title>第一篇文章 | 謡了謡頭</title>
+  <title>第四篇文章 | 謡了謡頭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="謡了謡頭">
   <meta name="keywords" content="">
@@ -105,8 +105,8 @@
   <div class="overlay">
   <div class="page-title">
     <div class="avatar"><a href="/"><img src="/images/zipai.jpg"></a></div>
-    <span>2020-04-21</span>
-    <h2>第一篇文章</h2>
+    <span>2020-04-24</span>
+    <h2>第四篇文章</h2>
     
     <div class="social-links">
     <a href="https://weibo.com/u/6603316751" target="_blank"><i class="fa fa-weibo fa-fw"></i></a>
@@ -118,25 +118,19 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <h2 id="hugo博客搭建"><a href="#hugo博客搭建" class="headerlink" title="hugo博客搭建"></a>hugo博客搭建</h2><h3 id="下载安装hugo"><a href="#下载安装hugo" class="headerlink" title="下载安装hugo"></a>下载安装hugo</h3><p>首先下载hugo<a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">hugo下载地址</a>下载好解压安装  </p>
-<a id="more"></a>
-<h3 id="hugo生成本地博客"><a href="#hugo生成本地博客" class="headerlink" title="hugo生成本地博客"></a>hugo生成本地博客</h3><p>在hugo文件下cmd打开控制台，然后输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo new site hugo_blog（自己定义博客名）</span><br></pre></td></tr></table></figure>
-<p>然后切换到生成的hugo_blog(博客的根目录)进行下一步操作</p>
-<h3 id="设置博客主题"><a href="#设置博客主题" class="headerlink" title="设置博客主题"></a>设置博客主题</h3><p><a href="https://themes.gohugo.io/" target="_blank" rel="noopener">hugo主题下载地址</a>在hugo_blog目录下的themes执行git clone (主题的git仓库地址)<br>新下载的主题就存放到hugo_blog目录下的themes文件夹下</p>
-<h4 id="新建文章及本地启动博客"><a href="#新建文章及本地启动博客" class="headerlink" title="新建文章及本地启动博客"></a>新建文章及本地启动博客</h4><p>在博客根目录cmd进入控制台输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo new day01.md</span><br></pre></td></tr></table></figure>
-<p>创建新的文档，写入内容<br>本地启动，输入启动命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo server</span><br></pre></td></tr></table></figure>
-<p>复制生成的本地网址<a href="http://localhost:1313/到浏览器中，查看站点是否运行成功" target="_blank" rel="noopener">http://localhost:1313/到浏览器中，查看站点是否运行成功</a><br>注意：每次修改完md文件中的内容后，需要重新在cmd中输入命令hugo server    </p>
-<h3 id="将博客部署到服务器"><a href="#将博客部署到服务器" class="headerlink" title="将博客部署到服务器"></a>将博客部署到服务器</h3><p>打开gitee 新建一个git仓库<br>需要注意：在是否开源要选择“公开” 否则别人无法访问<br>配置config.toml:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#指定主题</span><br><span class="line">theme &#x3D; &quot;(替换成你下载好的主题名)&quot;</span><br></pre></td></tr></table></figure>
-<p>在博客根目录下输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hugo</span><br></pre></td></tr></table></figure>
-<p>执行完毕后，会在hugo文件夹下自动生成一个public文件夹。<br>打开博客目录，cmd进入控制台按照git提示命令依此输入命令:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd public</span><br><span class="line">git init</span><br><span class="line">git add -A</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin (你的git仓库地址)</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-<p>提交成功  </p>
-<h3 id="开启码云的page服务"><a href="#开启码云的page服务" class="headerlink" title="开启码云的page服务"></a>开启码云的page服务</h3><p>点击启动即可</p>
+        <h2 id="Django-Vue实现登录功能"><a href="#Django-Vue实现登录功能" class="headerlink" title="Django+Vue实现登录功能"></a>Django+Vue实现登录功能</h2><h3 id="Django后端"><a href="#Django后端" class="headerlink" title="Django后端"></a>Django后端</h3>  <a id="more"></a>
+<p>后端接口<br><img src="https://i.loli.net/2020/04/24/CB69N3uk7RnzJOL.png" alt><br>后端路由<br><img src="https://i.loli.net/2020/04/24/53rYURxP689Ifhy.png" alt></p>
+<h2 id="Vue前端"><a href="#Vue前端" class="headerlink" title="Vue前端"></a>Vue前端</h2><p>前端页面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;table&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;</span><br><span class="line">                    用户名:</span><br><span class="line">                &lt;&#x2F;td&gt;</span><br><span class="line">                &lt;td&gt;</span><br><span class="line">                    &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;username&quot; placeholder&#x3D;&quot;请输入用户名&quot;&gt;</span><br><span class="line">                &lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;</span><br><span class="line">                    密码:</span><br><span class="line">                &lt;&#x2F;td&gt;</span><br><span class="line">                &lt;td&gt;</span><br><span class="line">                    &lt;input type&#x3D;&quot;password&quot; v-model&#x3D;&quot;password&quot;&gt;</span><br><span class="line">                &lt;&#x2F;td&gt;</span><br><span class="line">            &lt;&#x2F;tr&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;&lt;&#x2F;td&gt;</span><br><span class="line">                &lt;td&gt;</span><br><span class="line">                    &lt;Button @click&#x3D;&quot;submit&quot; color&#x3D;&quot;blue&quot;&gt;登录&lt;&#x2F;Button&gt;</span><br><span class="line">                    &lt;Button @click&#x3D;&quot;reginfo&quot; color&#x3D;&quot;red&quot;&gt;重置&lt;&#x2F;Button&gt;</span><br><span class="line">                &lt;&#x2F;td&gt;								</span><br><span class="line">            &lt;&#x2F;tr&gt;				</span><br><span class="line">        &lt;&#x2F;table&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">	  msg: &quot;这是一个变量&quot;,</span><br><span class="line">	  &#x2F;&#x2F;表单数据</span><br><span class="line">	  username:&#39;&#39;,</span><br><span class="line">	  password:&#39;&#39;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  mounted:function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">	  &#x2F;&#x2F;重置按钮</span><br><span class="line">	  reginfo:function()&#123;</span><br><span class="line">		  this.username &#x3D; &quot;&quot;;</span><br><span class="line">		  this.password &#x3D; &quot;&quot;;</span><br><span class="line">	  &#125;,</span><br><span class="line">	  &#x2F;&#x2F;定义提交事件</span><br><span class="line">	  submit:function()&#123;</span><br><span class="line">		  &#x2F;&#x2F;非空验证</span><br><span class="line">		  if(this.username&#x3D;&#x3D; &#39;&#39;)&#123;</span><br><span class="line">			  this.$Message(&#39;您没有输入用户名&#39;)</span><br><span class="line">			  return false</span><br><span class="line">		  &#125;</span><br><span class="line">		  if(this.password&#x3D;&#x3D;&#39;&#39;)&#123;</span><br><span class="line">			  this.$Message(&#39;密码不能为空&#39;)</span><br><span class="line">			  return false</span><br><span class="line">		  &#125;</span><br><span class="line">		  &#x2F;&#x2F;请求后台接口</span><br><span class="line">		  this.axios.get(&#39;http:&#x2F;&#x2F;127.0.0.1:8000&#x2F;login&#x2F;&#39;,&#123;params:&#123;username:this.username,password:this.password,password2:this.password&#125;&#125;).then((result)&#x3D;&gt;&#123;</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F;登录成功</span><br><span class="line">			localStorage.setItem(&quot;username&quot;,result.data.username)</span><br><span class="line">			localStorage.setItem(&quot;uid&quot;,result.data.uid)</span><br><span class="line">			  console.log(result);</span><br><span class="line">			this.$Message(result.data.message)</span><br><span class="line">			if(result.data.code&#x3D;&#x3D;200)&#123;</span><br><span class="line">					&#x2F;&#x2F;跳转页面</span><br><span class="line">				this.$router.push(&#39;&#x2F;&#39;)</span><br><span class="line">			&#125;</span><br><span class="line">		  &#125;)</span><br><span class="line">	  &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<p>在router文件夹下中的index.js注册组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import login from &#39;@&#x2F;components&#x2F;login&#39;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var routes &#x3D; [</span><br><span class="line">        &#123;</span><br><span class="line">          path:&#39;&#x2F;login&#39;,</span><br><span class="line">          name:&#39;login&#39;,</span><br><span class="line">          component:login</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 
       </div>
     </div>
@@ -145,12 +139,12 @@
 <div class="lx-navigation">
 	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2020/04/22/day1/">
+		<a class="copy" href="#">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Next</span>
-						<h3>第二篇文章</h3>
+						<h3>没有更新的文章</h3>
 					</div>
 				</div>
 			</div>
@@ -158,12 +152,12 @@
 	</div>
         <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="#">
+		<a class="copy" href="/2020/04/23/day2/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Prev</span>
-						<h3>没有更早的文章</h3>
+						<h3>第三篇文章</h3>
 					</div>
 				</div>
 			</div>
