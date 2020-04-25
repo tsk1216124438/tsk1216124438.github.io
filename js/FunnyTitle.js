@@ -9,7 +9,8 @@
      }
      else {
          $('[rel="icon"]').attr('href', "/img/trhx2.png");
-         document.title = '不忘初心幸得相逢' + OriginTitle;
+         // document.title = '不忘初心幸得相逢' + OriginTitle;
+         document.title = '不忘初心幸得相逢';
          titleTime = setTimeout(function () {
              document.title = OriginTitle;
          }, 2000);
