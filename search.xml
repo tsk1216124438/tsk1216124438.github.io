@@ -123,4 +123,24 @@
         <category>Django+Vue图形验证码</category>
       </categories>
   </entry>
+  <entry>
+    <title>第六篇文章</title>
+    <url>/2020/04/26/day5/</url>
+    <content><![CDATA[<ul>
+<li>打开百度搜索<a href="https://login.bce.baidu.com/?account=" target="_blank" rel="noopener">百度智能云</a>注册登录  <a id="more"></a></li>
+<li>在文字识别中创建一个应用<br><img src="https://i.loli.net/2020/04/26/AHTxWXPabFzDp9m.png" alt></li>
+<li>有一个技术文档我们可以点开,里面有详细操作说明。想要学习的朋友可以参考技术文档<br><img src="https://i.loli.net/2020/04/26/W6TbmUyphYLKZ7X.png" alt></li>
+<li>点开文字识别页面<br><img src="https://i.loli.net/2020/04/26/RtBNTwapydKSCFv.png" alt><h3 id="Django具体操作"><a href="#Django具体操作" class="headerlink" title="Django具体操作"></a>Django具体操作</h3></li>
+<li>在Django项目根目录下建立一个.py文件<br><img src="https://i.loli.net/2020/04/26/wzmGIhWFJODs9PT.png" alt></li>
+<li>导包<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">import base64</span><br><span class="line">import urllib</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 读取token 注意这里的client_id就是你的应用的Aplkey,client_secret就是你的Secret Key</span><br><span class="line"></span><br><span class="line">res &#x3D; requests.get(&quot;https:&#x2F;&#x2F;aip.baidubce.com&#x2F;oauth&#x2F;2.0&#x2F;token?grant_type&#x3D;client_credentials&amp;client_id&#x3D;你的Aplkey&amp;client_secret&#x3D;你的Secret Key&quot;)</span><br><span class="line"></span><br><span class="line">token &#x3D; res.json()[&#39;access_token&#39;]</span><br><span class="line"></span><br><span class="line"># print(token)</span><br><span class="line"></span><br><span class="line">#开始智能识图</span><br><span class="line"></span><br><span class="line">#接口地址 注意这里的</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;aip.baidubce.com&#x2F;rest&#x2F;2.0&#x2F;ocr&#x2F;v1&#x2F;accurate_basic?access_token&#x3D;&#39;+token</span><br><span class="line"></span><br><span class="line">#定义头部信息</span><br><span class="line"></span><br><span class="line">myheaders &#x3D; &#123;&#39;Content-Type&#39;:&#39;application&#x2F;x-www-form-urlencoded&#39;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#操作图片</span><br><span class="line">#读取图片</span><br><span class="line"></span><br><span class="line">myimg &#x3D; open(&#39;.&#x2F;code.png&#39;,&#39;rb&#39;)</span><br><span class="line"></span><br><span class="line">temp_img &#x3D; myimg.read()</span><br><span class="line"></span><br><span class="line">myimg.close()</span><br><span class="line"></span><br><span class="line">#进行base64编码</span><br><span class="line"></span><br><span class="line">temp_data &#x3D; &#123;&#39;image&#39;:base64.b64encode(temp_img)&#125;</span><br><span class="line"></span><br><span class="line">#对图片地址进行urlencode操作</span><br><span class="line"></span><br><span class="line">temp_data &#x3D; urllib.parse.urlencode(temp_data)</span><br><span class="line"></span><br><span class="line">#请求视图接口</span><br><span class="line"></span><br><span class="line">res &#x3D; requests.post(url&#x3D;url,data&#x3D;temp_data,headers&#x3D;myheaders)</span><br><span class="line"></span><br><span class="line">以json格式取出验证码</span><br><span class="line"></span><br><span class="line">code &#x3D; res.json()[&#39;words_result&#39;][0][&#39;words&#39;]</span><br><span class="line"></span><br><span class="line">code &#x3D; str(code).replace(&#39; &#39;,&#39;&#39;)</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Django+百度智能云识别图片验证码</category>
+      </categories>
+  </entry>
 </search>
