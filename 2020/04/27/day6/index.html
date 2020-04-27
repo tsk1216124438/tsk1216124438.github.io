@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+
+  <script type="text/javascript" src="/love.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content=#58b77a>
+  <title>第七篇文章 | 謡了謡頭</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="謡了謡頭">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'lx',
+    version: '0.3.9',
+    localsearch:{
+      "enable": true,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: 'search.xml'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
+  <style type="text/css">
+    pre,
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    h1, h2, h3, h4, h5, figure {
+      font-family: sans-serif;
+    }
+    .menu-container{
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "endless-river",
+	     });
+	});
+	</script>
+  <!--Google_Analytics-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=..."></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '...');
+</script>
+<!--baidu_analytics-->
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?82c8f83fbba48234e32e168ea584d5ec";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+<div class="single">
+<a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i></a>
+<div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Search..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+<div id="page">
+<div id="lx-aside" style="background-image: url(http://pic.90sjimg.com/back_pic/qk/back_origin_pic/00/01/90/7b96b74a0a2b615089859de45551ecc0.jpg)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><a href="/"><img src="/images/zipai.jpg"></a></div>
+    <span>2020-04-27</span>
+    <h2>第七篇文章</h2>
+    
+    <div class="social-links">
+    <a href="https://weibo.com/u/6603316751" target="_blank"><i class="fa fa-weibo fa-fw"></i></a>
+</div></div>
+</div>
+</div>
+
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <h3 id="导入chromedriver"><a href="#导入chromedriver" class="headerlink" title="导入chromedriver"></a>导入chromedriver</h3> <a id="more"></a>
+<ul>
+<li>首先下载chromedriver.exe文件<a href="http://npm.taobao.org/mirrors/chromedriver/" target="_blank" rel="noopener">点击下载</a>  </li>
+</ul>
+<h3 id="Django操作"><a href="#Django操作" class="headerlink" title="Django操作"></a>Django操作</h3><ul>
+<li><p>把下载好的chromedriver.exe文件导入项目根目录下<br><img src="https://i.loli.net/2020/04/27/e9jwyPS1kRdIs2z.png" alt></p>
+</li>
+<li><p>创建一个.py脚本<br>具体代码:<br>需要注意:因为使用的百度智能云,如果验证码是字母或者数字它的识别率会识别不完整,关于如何提高它的清晰度文章最后已经写了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line">from urllib.parse import urlparse</span><br><span class="line">import time</span><br><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line">import base64</span><br><span class="line">import urllib</span><br><span class="line">from selenium.webdriver import ActionChains</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 建立浏览器对象</span><br><span class="line">browser &#x3D; webdriver.Chrome()</span><br><span class="line">#</span><br><span class="line"># #打开网址</span><br><span class="line">browser.get(&#39;http:&#x2F;&#x2F;localhost:8080&#x2F;login&#39;)</span><br><span class="line">#</span><br><span class="line">time.sleep(3)</span><br><span class="line">#</span><br><span class="line"># # 选择元素</span><br><span class="line">myimg &#x3D; browser.find_element_by_xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;div&#x2F;section&#x2F;div&#x2F;table&#x2F;tr[4]&#x2F;td[2]&#x2F;img&#39;)</span><br><span class="line">print(myimg)</span><br><span class="line"></span><br><span class="line"># myimg &#x3D; browser.find_element_by_xpath(&#39;&#x2F;&#x2F;*[@id&#x3D;&quot;app&quot;]&#x2F;div&#x2F;section&#x2F;div&#x2F;table&#x2F;tr[4]&#x2F;td[2]&#x2F;img&#39;)</span><br><span class="line"># print(myimg)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#</span><br><span class="line">#</span><br><span class="line"># # 截取屏幕</span><br><span class="line">myimg.screenshot(&#39;code1.png&#39;)</span><br><span class="line"># browser.get_screenshot_as_file(&#39;register.png&#39;)</span><br><span class="line">#</span><br><span class="line"># browser.close()</span><br><span class="line"></span><br><span class="line"># 请求百度接口</span><br><span class="line">res &#x3D; requests.get(&#39;https:&#x2F;&#x2F;aip.baidubce.com&#x2F;oauth&#x2F;2.0&#x2F;token?grant_type&#x3D;client_credentials&amp;client_id&#x3D;3xIXz3mqYXt0meOPxaVPmThq&amp;client_secret&#x3D;B5GrwiN0PUEXCDODyEf5gFGLMr7oO5cb&#39;)</span><br><span class="line">#</span><br><span class="line">#</span><br><span class="line"># # 转码</span><br><span class="line">res &#x3D; json.loads(str(res.text))</span><br><span class="line">token &#x3D; res[&#39;access_token&#39;]</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># # 识别图像</span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;aip.baidubce.com&#x2F;rest&#x2F;2.0&#x2F;ocr&#x2F;v1&#x2F;accurate_basic?access_token&#x3D;&#39; + token</span><br><span class="line"></span><br><span class="line"># 构造头部</span><br><span class="line"></span><br><span class="line">header &#x3D; &#123;&#39;Content-Type&#39;:&#39;application&#x2F;x-www-form-urlencoded&#39;&#125;</span><br><span class="line"></span><br><span class="line"># 构造图片 # 注意这里面的图片是day5文章中下载好的图片</span><br><span class="line">img &#x3D; open(&#39;.&#x2F;code1.png&#39;, &#39;rb&#39;)</span><br><span class="line">temp_img &#x3D; img.read()</span><br><span class="line"># img.close()</span><br><span class="line"></span><br><span class="line"># 构建参数</span><br><span class="line">data &#x3D; &#123;&#39;image&#39;:base64.b64encode(temp_img)&#125;</span><br><span class="line"># 编码</span><br><span class="line">data &#x3D; urllib.parse.urlencode(data)</span><br><span class="line"></span><br><span class="line"># 发送请求</span><br><span class="line">res &#x3D; requests.post(url&#x3D;url,data&#x3D;data,headers&#x3D;header)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># js转化</span><br><span class="line">code &#x3D; json.loads(res.text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 模拟操作 提交信息</span><br><span class="line"></span><br><span class="line">code &#x3D; code[&#39;words_result&#39;][0][&#39;words&#39;]</span><br><span class="line"></span><br><span class="line">browser.find_element_by_xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;div&#x2F;section&#x2F;div&#x2F;table&#x2F;tr[1]&#x2F;td[2]&#x2F;input&#39;).send_keys(&#39;小王&#39;)</span><br><span class="line"></span><br><span class="line">browser.find_element_by_xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;div&#x2F;section&#x2F;div&#x2F;table&#x2F;tr[2]&#x2F;td[2]&#x2F;input&#39;).send_keys(&#39;1234&#39;)</span><br><span class="line"></span><br><span class="line">#填入验证码</span><br><span class="line">browser.find_element_by_xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;div&#x2F;section&#x2F;div&#x2F;table&#x2F;tr[3]&#x2F;td[2]&#x2F;input&#39;).send_keys(code.strip().replace(&#39; &#39;,&#39;&#39;))</span><br><span class="line"></span><br><span class="line">#进行拖动操作</span><br><span class="line">button &#x3D; browser.find_element_by_class_name(&#39;dv_handler&#39;)</span><br><span class="line">print(button)</span><br><span class="line">#声明动作实例</span><br><span class="line">action &#x3D; ActionChains(browser)</span><br><span class="line">#点击并且按住</span><br><span class="line">action.click_and_hold(button).perform()</span><br><span class="line">action.reset_actions()</span><br><span class="line">#实际拖动像素和轨迹长度是有出入的</span><br><span class="line">action.move_by_offset(280,0).perform()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#登录按钮 xpath方法</span><br><span class="line"># browser.find_element_by_xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;div&#x2F;section&#x2F;div&#x2F;table&#x2F;tr[5]&#x2F;td[2]&#x2F;button[1]&#x2F;span&#39;).click()</span><br><span class="line"></span><br><span class="line">#点击登录按钮 name方法</span><br><span class="line">browser.find_element_by_class_name(&#39;h-btn&#39;).click()</span><br><span class="line"></span><br><span class="line"># 停留5秒</span><br><span class="line">time.sleep(5)</span><br><span class="line"># 退出</span><br><span class="line">browser.close()</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="提高智能云识图清晰度"><a href="#提高智能云识图清晰度" class="headerlink" title="提高智能云识图清晰度"></a>提高智能云识图清晰度</h3><ul>
+<li><p>需要先下载一个包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install opencv-python</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后在项目根目录下再建立一个.py文件<br>具体代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#导包  这个包就是刚才下载好的  </span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line">#读图</span><br><span class="line">img &#x3D; cv2.imread(&#39;.&#x2F;code.png&#39;,cv2.IMREAD_GRAYSCALE)</span><br><span class="line"></span><br><span class="line">print(img)</span><br><span class="line"></span><br><span class="line">#写图</span><br><span class="line">cv2.imwrite(&#39;.&#x2F;code1.png&#39;,img)</span><br></pre></td></tr></table></figure></li>
+<li><p>最后它会自动截取验证码将这个验证码code1.png替换成上面py文件中的code.png即可</p>
+</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="#">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>没有更新的文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/04/26/day5/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>第六篇文章</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+<div class="comment"><div id="comments"></div></div>
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">謡了謡頭</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+<!--    添加博客运行时间-->
+    <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("04/20/2019 17:38:00");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>i
+
+  </div>
+
+</footer>
+
+</div>
+
+<button class="hamburger hamburger--arrow-r" type="button">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</button>
+<div class="menu visibility">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587469103294&di=a36af35772671652bbc92bcc0268e9ba&imgtype=0&src=http%3A%2F%2Fimg.08087.cc%2Fuploads%2F20191221%2F21%2F1576933758-XrlzOjnuyS.jpg" alt="謡了謡頭"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>謡了謡頭</p>
+          <span class="tagline">心若在 梦就在</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-th-list fa-fw"></i>分类</span>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Django-Vue%E5%9B%BE%E5%BD%A2%E9%AA%8C%E8%AF%81%E7%A0%81/">Django+Vue图形验证码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django-Vue%E6%B3%A8%E5%86%8C/">Django+Vue注册</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django-Vue%E7%99%BB%E5%BD%95/">Django+Vue登录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django-selenium%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95/">Django+selenium实现自动登录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django-%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91%E8%AF%86%E5%88%AB%E5%9B%BE%E7%89%87%E9%AA%8C%E8%AF%81%E7%A0%81/">Django+百度智能云识别图片验证码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django%E3%80%81vue%E5%9F%BA%E7%A1%80/">Django、vue基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hugo/">hugo</a></li></ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>页面</span>
+        <ul>
+          <li><a href="/about/">个人简历</a></li>
+        </ul>
+    </li>
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-link fa-fw"></i>友链</span>
+        <ul>
+          <li> <a href="https://tian_kang_kang.gitee.io/my_technology_blog/" target="_blank">hugo</a></li>
+        </ul>
+    </li>
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.easing.min.js"></script>
+<script>
+(function () {
+	"use strict";
+	var goToTop = function() {
+		$(".js-gotop").on("click", function(event){
+			event.preventDefault();
+			$("html, body").animate({
+				scrollTop: $("html").offset().top
+			}, 500, "easeInOutExpo");
+			return false;
+		});
+		$(window).scroll(function(){
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$(".js-top").addClass("active");
+			} else {
+				$(".js-top").removeClass("active");
+			}
+		});
+	};
+	$(function(){
+		goToTop();
+	});
+}());
+</script>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/local.search.js"></script>
+<script src="//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'tx1p9hlbePoCoCfYbwJrNGiL-gzGzoHsz',
+    appKey: '68K06k8LVetqJAwcW7eKYcmL',
+    placeholder: 'Say something.',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '5' || 10,
+    lang: 'zh-cn' || 'zh-cn'
+  });
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+  <script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script>
+  <!--单击显示文字-->
+  <script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="\js\FunnyTitle.js"></script>
+  <!--动态线条背景-->
+  <script type="text/javascript"
+    color="120,100,110" opacity='1' zIndex="-2" count="500" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
