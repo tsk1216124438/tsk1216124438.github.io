@@ -282,4 +282,31 @@
         <category>将图片存储到又拍云</category>
       </categories>
   </entry>
+  <entry>
+    <title>第十二篇文章</title>
+    <url>/2020/05/07/day11/</url>
+    <content><![CDATA[<h3 id="Django后端"><a href="#Django后端" class="headerlink" title="Django后端"></a>Django后端</h3><ul>
+<li><p>使用装饰器判断</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 后端使用装饰器</span><br><span class="line"># 定义权限检测装饰器</span><br><span class="line">def my_decorator(func):</span><br><span class="line">    def wrapper(request,*args,**kwargs):</span><br><span class="line"></span><br><span class="line">        # 接收参数</span><br><span class="line">        uid &#x3D; request.GET.get(&#39;uid&#39;,None)</span><br><span class="line"></span><br><span class="line">        myjwt &#x3D; request.GET.get(&#39;jwt&#39;)</span><br><span class="line"></span><br><span class="line">        print(myjwt)</span><br><span class="line"></span><br><span class="line">        # 验证用户合法性</span><br><span class="line">        decode_jwt &#x3D; jwt.decode(myjwt,&#39;tsk123&#39;,algorithms&#x3D;[&#39;HS256&#39;])</span><br><span class="line"></span><br><span class="line">        # 进行比对</span><br><span class="line">        if int(uid) !&#x3D; int(decode_jwt[&#39;uid&#39;]):</span><br><span class="line">            </span><br><span class="line">            return Response(&#123;</span><br><span class="line">                &#39;code&#39;:401,</span><br><span class="line">                &#39;message&#39;:&#39;您的密钥无权限&#39;</span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        return func(request,*args,**kwargs)</span><br><span class="line">    return wrapper</span><br></pre></td></tr></table></figure></li>
+<li><p>在需要的视图中导入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 导入装饰器包</span><br><span class="line">from django.utils.decorators import method_decorator</span><br><span class="line"></span><br><span class="line"># 获取用户信息接口</span><br><span class="line">class UserInfo(APIView):</span><br><span class="line"></span><br><span class="line">    @method_decorator(my_decorator)</span><br><span class="line">    def get(self,request):</span><br><span class="line"></span><br><span class="line">        # 接收参数</span><br><span class="line">        uid &#x3D; request.GET.get(&#39;uid&#39;,None)</span><br><span class="line"></span><br><span class="line">        # 查询数据库</span><br><span class="line">        user &#x3D; User.objects.get(id&#x3D;int(uid))</span><br><span class="line"></span><br><span class="line">        if user.img &#x3D;&#x3D;&quot;&quot;:</span><br><span class="line">            user.img &#x3D; &quot;sina.png&quot;</span><br><span class="line"></span><br><span class="line">        #返回</span><br><span class="line">        return Response(&#123;</span><br><span class="line">            &#39;img&#39;:user.img,</span><br><span class="line">            &#39;phone&#39;:user.phone</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用中间件判断用户是否携带JWT令牌</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">导入</span><br><span class="line">from django.utils.deprecation import MiddlewareMixin</span><br><span class="line"></span><br><span class="line"># 自定义中间件类</span><br><span class="line">class MyMiddleWare(MiddlewareMixin):</span><br><span class="line">    # 请求之前</span><br><span class="line">    def process_request(self,request):</span><br><span class="line">        uid &#x3D; request.GET.get(&#39;uid&#39;)</span><br><span class="line">        clinet_jwt &#x3D; request.GET.get(&#39;jwt&#39;,None)</span><br><span class="line">    </span><br><span class="line">        decode_jwt &#x3D; jwt.decode(clinet_jwt, &#39;tsk123&#39;, algorithms&#x3D;[&#39;HS256&#39;])</span><br><span class="line">        if decode_jwt[&#39;uid&#39;] !&#x3D; str(uid):</span><br><span class="line">    </span><br><span class="line">            return HttpResponse(&#39;你没有JWT令牌&#39;)</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    # 模板渲染之前</span><br><span class="line">    def process_view(self,request,view_func,view_args,view_kwargs):</span><br><span class="line">        pass</span><br><span class="line">    # 请求之后</span><br><span class="line">    def process_response(self,request,response):</span><br><span class="line">        return response</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h3 id="前端Vue"><a href="#前端Vue" class="headerlink" title="前端Vue"></a>前端Vue</h3><ul>
+<li>在登录页面如果用户登录成功就将JWT存储到localStorage中<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">localStorage.setItem(&quot;jwt&quot;,result.data.jwt);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>JWT用户信息加密</category>
+      </categories>
+  </entry>
 </search>
