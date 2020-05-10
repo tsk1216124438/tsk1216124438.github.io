@@ -338,4 +338,40 @@
         <category>Vue国际化语言操作</category>
       </categories>
   </entry>
+  <entry>
+    <title>第十四篇文章</title>
+    <url>/2020/05/09/day13/</url>
+    <content><![CDATA[<ul>
+<li><p>在vue组件样式找到需要修改的文件</p>
+<a id="more"></a>
+<p><img src="https://i.loli.net/2020/05/10/XypzZwJG6jKmbao.png" alt></p>
+</li>
+<li><p>在文件中将字体修改为自定义变量<br><img src="https://i.loli.net/2020/05/10/xRsWLBq1cFwarfj.png" alt></p>
+</li>
+<li><p>将页面颜色修改为自定义变量<br><img src="https://i.loli.net/2020/05/10/ndvrolDN9SGh8FE.png" alt></p>
+</li>
+<li><p>vue具体代码</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">			&lt;div&gt;</span><br><span class="line"></span><br><span class="line">				&lt;!--白昼与暗夜模式开关--&gt;</span><br><span class="line"></span><br><span class="line">				&lt;h-switch @change&#x3D;&quot;change_back&quot; v-model&#x3D;&quot;anye&quot;&gt;&#123;&#123; $t(&#39;m.daytime&#39;) &#125;&#125;&#x2F;&#123;&#123; $t(&#39;m.night&#39;) &#125;&#125;&lt;&#x2F;h-switch&gt;</span><br><span class="line"></span><br><span class="line">			&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">	export default&#123;</span><br><span class="line">		&#x2F;&#x2F;定义数据</span><br><span class="line">		data()&#123;</span><br><span class="line"></span><br><span class="line">			return &#123;</span><br><span class="line"></span><br><span class="line">				&#x2F;&#x2F;用户名</span><br><span class="line">				username:&#39;&#39;,</span><br><span class="line">				&#x2F;&#x2F;中英文切换</span><br><span class="line">				lang:1,</span><br><span class="line"></span><br><span class="line">				&#x2F;&#x2F;暗夜默认变量</span><br><span class="line">				anye:1,</span><br><span class="line">				</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		&#125;,</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F;钩子方法 </span><br><span class="line">		mounted:function()&#123;</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F;调用暗夜方法</span><br><span class="line">			this.ifanye();</span><br><span class="line"></span><br><span class="line">		&#125;,</span><br><span class="line">		methods:&#123;</span><br><span class="line"></span><br><span class="line">			ifanye()&#123;</span><br><span class="line"></span><br><span class="line">				var backanye &#x3D; localStorage.getItem(&#39;backanye&#39;)</span><br><span class="line"></span><br><span class="line">                </span><br><span class="line">                 &#x2F;&#x2F;判断暗夜点击按钮</span><br><span class="line">				if(backanye !&#x3D; &#39;1&#39;)&#123;</span><br><span class="line">					this.anye &#x3D; 0;</span><br><span class="line">					this.change_back()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				&#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">				  &#x2F;&#x2F;切换主题颜色</span><br><span class="line">			change_back:function()&#123;</span><br><span class="line"></span><br><span class="line">				&#x2F;&#x2F;白昼模式</span><br><span class="line"></span><br><span class="line">				&#x2F;&#x2F;获取样式表</span><br><span class="line">				var styles &#x3D; getComputedStyle(document.documentElement);</span><br><span class="line"></span><br><span class="line">				if(this.anye &#x3D;&#x3D; 1)&#123;</span><br><span class="line"></span><br><span class="line">					&#x2F;&#x2F;动态更改</span><br><span class="line">					document.documentElement.style.setProperty(&quot;--bg-color&quot;,&quot;white&quot;);</span><br><span class="line"></span><br><span class="line">					&#x2F;&#x2F;字体颜色</span><br><span class="line">					document.documentElement.style.setProperty(&quot;--a-color&quot;,&quot;black&quot;);</span><br><span class="line"></span><br><span class="line">					localStorage.setItem(&#39;backanye&#39;,&#39;1&#39;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">				&#125;else&#123;</span><br><span class="line"></span><br><span class="line">					&#x2F;&#x2F;暗夜模式</span><br><span class="line"></span><br><span class="line">					&#x2F;&#x2F;动态更改</span><br><span class="line">					document.documentElement.style.setProperty(&quot;--bg-color&quot;,&quot;#292a2d&quot;);</span><br><span class="line"></span><br><span class="line">					&#x2F;&#x2F;字体颜色</span><br><span class="line">					document.documentElement.style.setProperty(&quot;--a-color&quot;,&quot;white&quot;);</span><br><span class="line"></span><br><span class="line">					localStorage.setItem(&#39;backanye&#39;,&#39;0&#39;)</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	  		&#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Vue实现白昼与暗夜模式</category>
+      </categories>
+  </entry>
 </search>
