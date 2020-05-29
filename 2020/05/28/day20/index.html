@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content=#58b77a>
-  <title>第七篇文章 | 謡了謡頭</title>
+  <title>售前第二天 | 謡了謡頭</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="謡了謡頭">
   <meta name="keywords" content="">
@@ -105,8 +105,8 @@
   <div class="overlay">
   <div class="page-title">
     <div class="avatar"><a href="/"><img src="/images/zipai.jpg"></a></div>
-    <span>2020-04-27</span>
-    <h2>第七篇文章</h2>
+    <span>2020-05-28</span>
+    <h2>售前第二天</h2>
     
     <div class="social-links">
     <a href="https://weibo.com/u/6603316751" target="_blank"><i class="fa fa-weibo fa-fw"></i></a>
@@ -118,27 +118,44 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <h3 id="导入chromedriver"><a href="#导入chromedriver" class="headerlink" title="导入chromedriver"></a>导入chromedriver</h3> <a id="more"></a>
-<ul>
-<li>首先下载chromedriver.exe文件<a href="http://npm.taobao.org/mirrors/chromedriver/" target="_blank" rel="noopener">点击下载</a>  </li>
-</ul>
-<h3 id="Django操作"><a href="#Django操作" class="headerlink" title="Django操作"></a>Django操作</h3><ul>
-<li><p>把下载好的chromedriver.exe文件导入项目根目录下<br><img src="https://i.loli.net/2020/04/27/e9jwyPS1kRdIs2z.png" alt></p>
-</li>
-<li><p>创建一个.py脚本<br>具体代码:<br>需要注意:因为使用的百度智能云,如果验证码是字母或者数字它的识别率会识别不完整,关于如何提高它的清晰度文章最后已经写了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line">from urllib.parse import urlparse</span><br><span class="line">import time</span><br><span class="line">import requests</span><br><span class="line">import json</span><br><span class="line">import base64</span><br><span class="line">import urllib</span><br><span class="line">from selenium.webdriver import ActionChains</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 建立浏览器对象</span><br><span class="line">browser &#x3D; webdriver.Chrome()</span><br><span class="line">#</span><br><span class="line"># #打开网址</span><br><span class="line">browser.get(&#39;http:&#x2F;&#x2F;localhost:8080&#x2F;login&#39;)</span><br><span class="line">#</span><br><span class="line">time.sleep(3)</span><br><span class="line">#</span><br><span class="line"># # 选择元素</span><br><span class="line">myimg &#x3D; browser.find_element_by_xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;div&#x2F;section&#x2F;div&#x2F;table&#x2F;tr[4]&#x2F;td[2]&#x2F;img&#39;)</span><br><span class="line">print(myimg)</span><br><span class="line"></span><br><span class="line"># myimg &#x3D; browser.find_element_by_xpath(&#39;&#x2F;&#x2F;*[@id&#x3D;&quot;app&quot;]&#x2F;div&#x2F;section&#x2F;div&#x2F;table&#x2F;tr[4]&#x2F;td[2]&#x2F;img&#39;)</span><br><span class="line"># print(myimg)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#</span><br><span class="line">#</span><br><span class="line"># # 截取屏幕</span><br><span class="line">myimg.screenshot(&#39;code1.png&#39;)</span><br><span class="line"># browser.get_screenshot_as_file(&#39;register.png&#39;)</span><br><span class="line">#</span><br><span class="line"># browser.close()</span><br><span class="line"></span><br><span class="line"># 请求百度接口</span><br><span class="line">res &#x3D; requests.get(&#39;https:&#x2F;&#x2F;aip.baidubce.com&#x2F;oauth&#x2F;2.0&#x2F;token?grant_type&#x3D;client_credentials&amp;client_id&#x3D;3xIXz3mqYXt0meOPxaVPmThq&amp;client_secret&#x3D;B5GrwiN0PUEXCDODyEf5gFGLMr7oO5cb&#39;)</span><br><span class="line">#</span><br><span class="line">#</span><br><span class="line"># # 转码</span><br><span class="line">res &#x3D; json.loads(str(res.text))</span><br><span class="line">token &#x3D; res[&#39;access_token&#39;]</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># # 识别图像</span><br><span class="line">url &#x3D; &#39;https:&#x2F;&#x2F;aip.baidubce.com&#x2F;rest&#x2F;2.0&#x2F;ocr&#x2F;v1&#x2F;accurate_basic?access_token&#x3D;&#39; + token</span><br><span class="line"></span><br><span class="line"># 构造头部</span><br><span class="line"></span><br><span class="line">header &#x3D; &#123;&#39;Content-Type&#39;:&#39;application&#x2F;x-www-form-urlencoded&#39;&#125;</span><br><span class="line"></span><br><span class="line"># 构造图片 # 注意这里面的图片是day5文章中下载好的图片</span><br><span class="line">img &#x3D; open(&#39;.&#x2F;code1.png&#39;, &#39;rb&#39;)</span><br><span class="line">temp_img &#x3D; img.read()</span><br><span class="line"># img.close()</span><br><span class="line"></span><br><span class="line"># 构建参数</span><br><span class="line">data &#x3D; &#123;&#39;image&#39;:base64.b64encode(temp_img)&#125;</span><br><span class="line"># 编码</span><br><span class="line">data &#x3D; urllib.parse.urlencode(data)</span><br><span class="line"></span><br><span class="line"># 发送请求</span><br><span class="line">res &#x3D; requests.post(url&#x3D;url,data&#x3D;data,headers&#x3D;header)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># js转化</span><br><span class="line">code &#x3D; json.loads(res.text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 模拟操作 提交信息</span><br><span class="line"></span><br><span class="line">code &#x3D; code[&#39;words_result&#39;][0][&#39;words&#39;]</span><br><span class="line"></span><br><span class="line">browser.find_element_by_xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;div&#x2F;section&#x2F;div&#x2F;table&#x2F;tr[1]&#x2F;td[2]&#x2F;input&#39;).send_keys(&#39;小王&#39;)</span><br><span class="line"></span><br><span class="line">browser.find_element_by_xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;div&#x2F;section&#x2F;div&#x2F;table&#x2F;tr[2]&#x2F;td[2]&#x2F;input&#39;).send_keys(&#39;1234&#39;)</span><br><span class="line"></span><br><span class="line">#填入验证码</span><br><span class="line">browser.find_element_by_xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;div&#x2F;section&#x2F;div&#x2F;table&#x2F;tr[3]&#x2F;td[2]&#x2F;input&#39;).send_keys(code.strip().replace(&#39; &#39;,&#39;&#39;))</span><br><span class="line"></span><br><span class="line">#进行拖动操作</span><br><span class="line">button &#x3D; browser.find_element_by_class_name(&#39;dv_handler&#39;)</span><br><span class="line">print(button)</span><br><span class="line">#声明动作实例</span><br><span class="line">action &#x3D; ActionChains(browser)</span><br><span class="line">#点击并且按住</span><br><span class="line">action.click_and_hold(button).perform()</span><br><span class="line">action.reset_actions()</span><br><span class="line">#实际拖动像素和轨迹长度是有出入的</span><br><span class="line">action.move_by_offset(280,0).perform()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#登录按钮 xpath方法</span><br><span class="line"># browser.find_element_by_xpath(&#39;&#x2F;html&#x2F;body&#x2F;div[1]&#x2F;div&#x2F;section&#x2F;div&#x2F;table&#x2F;tr[5]&#x2F;td[2]&#x2F;button[1]&#x2F;span&#39;).click()</span><br><span class="line"></span><br><span class="line">#点击登录按钮 name方法</span><br><span class="line">browser.find_element_by_class_name(&#39;h-btn&#39;).click()</span><br><span class="line"></span><br><span class="line"># 停留5秒</span><br><span class="line">time.sleep(5)</span><br><span class="line"># 退出</span><br><span class="line">browser.close()</span><br></pre></td></tr></table></figure>
+        <h1 id="day02售前知识总结"><a href="#day02售前知识总结" class="headerlink" title="day02售前知识总结"></a>day02售前知识总结</h1> <a id="more"></a>
 
-</li>
-</ul>
-<h3 id="提高智能云识图清晰度"><a href="#提高智能云识图清晰度" class="headerlink" title="提高智能云识图清晰度"></a>提高智能云识图清晰度</h3><ul>
-<li><p>需要先下载一个包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install opencv-python</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后在项目根目录下再建立一个.py文件<br>具体代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#导包  这个包就是刚才下载好的  </span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line">#读图</span><br><span class="line">img &#x3D; cv2.imread(&#39;.&#x2F;code.png&#39;,cv2.IMREAD_GRAYSCALE)</span><br><span class="line"></span><br><span class="line">print(img)</span><br><span class="line"></span><br><span class="line">#写图</span><br><span class="line">cv2.imwrite(&#39;.&#x2F;code1.png&#39;,img)</span><br></pre></td></tr></table></figure></li>
-<li><p>最后它会自动截取验证码将这个验证码code1.png替换成上面py文件中的code.png即可</p>
-</li>
-</ul>
+
+<h2 id="首先必须知道公司大体岗位架构"><a href="#首先必须知道公司大体岗位架构" class="headerlink" title="首先必须知道公司大体岗位架构"></a>首先必须知道公司大体岗位架构</h2><h5 id="产品：把老板或者客户的产品架构变成一个真实的页面模板"><a href="#产品：把老板或者客户的产品架构变成一个真实的页面模板" class="headerlink" title="产品：把老板或者客户的产品架构变成一个真实的页面模板"></a>产品：把老板或者客户的产品架构变成一个真实的页面模板</h5><h5 id="开发：前端开发人员，后端开发人员（将产品实现的页面模板用代码变成一个可使用的APP或者软件）"><a href="#开发：前端开发人员，后端开发人员（将产品实现的页面模板用代码变成一个可使用的APP或者软件）" class="headerlink" title="开发：前端开发人员，后端开发人员（将产品实现的页面模板用代码变成一个可使用的APP或者软件）"></a>开发：前端开发人员，后端开发人员（将产品实现的页面模板用代码变成一个可使用的APP或者软件）</h5><h5 id="客服：负责接待来访客户或者是电话咨询的客人，客服根据客户的业务需求派出对应的售前工程师介绍产品"><a href="#客服：负责接待来访客户或者是电话咨询的客人，客服根据客户的业务需求派出对应的售前工程师介绍产品" class="headerlink" title="客服：负责接待来访客户或者是电话咨询的客人，客服根据客户的业务需求派出对应的售前工程师介绍产品"></a>客服：负责接待来访客户或者是电话咨询的客人，客服根据客户的业务需求派出对应的售前工程师介绍产品</h5><hr>
+<h3 id="1-其次我们需要必须先了解什么是售前？"><a href="#1-其次我们需要必须先了解什么是售前？" class="headerlink" title="1.其次我们需要必须先了解什么是售前？"></a>1.其次我们需要必须先了解什么是售前？</h3><ol>
+<li>售前服务是企业在顾客未接触产品之前所开展的一系列刺激顾客购买欲望的服务工作。售前服务的主要目的是协助客户做好工程规划和系统需求分析，使得我们的产品能够最大限度的满足用户需要</li>
+<li>通俗讲的话就是协助销售人员将公司产品推销出去，售前工程师的主要工作围绕项目开展</li>
+</ol>
+<h4 id="2-售前有三大阶段"><a href="#2-售前有三大阶段" class="headerlink" title="2.售前有三大阶段"></a>2.售前有三大阶段</h4><ol>
+<li>售前：与客户签合同前的阶段。主要有获取线索、与客户交流、提供项目的技术方案、应标、签合同等流程</li>
+<li>售中：项目交付后的阶段。其中有需求评审、设计、开发、实施等流程</li>
+<li>售后：项目交付后的阶段。大致包括维护、使用培训、技术支撑等流程</li>
+</ol>
+<h4 id="3-售前两大最主要的类型"><a href="#3-售前两大最主要的类型" class="headerlink" title="3.售前两大最主要的类型"></a>3.售前两大最主要的类型</h4><h5 id="产品型售前："><a href="#产品型售前：" class="headerlink" title="产品型售前："></a>产品型售前：</h5><h6 id="1-产品型售前（公司已经开发出产品，可以添加额外功能。小项目不需要投标）"><a href="#1-产品型售前（公司已经开发出产品，可以添加额外功能。小项目不需要投标）" class="headerlink" title="1.产品型售前（公司已经开发出产品，可以添加额外功能。小项目不需要投标）"></a>1.产品型售前（公司已经开发出产品，可以添加额外功能。小项目不需要投标）</h6><h6 id="2-硬件公司，如服务器、交换机厂商等"><a href="#2-硬件公司，如服务器、交换机厂商等" class="headerlink" title="2. 硬件公司，如服务器、交换机厂商等"></a>2. 硬件公司，如服务器、交换机厂商等</h6><h6 id="3-软件公司：CRM系统。MIS系统"><a href="#3-软件公司：CRM系统。MIS系统" class="headerlink" title="3.软件公司：CRM系统。MIS系统"></a>3.软件公司：CRM系统。MIS系统</h6><p>产品型售前就是公司已经有产品了，只需要协助销售将产品推销给客户</p>
+<h5 id="方案型售前："><a href="#方案型售前：" class="headerlink" title="方案型售前："></a>方案型售前：</h5><h6 id="1-根据客户的需求来设计的产品，市场内并没有。我们来提供解决方案"><a href="#1-根据客户的需求来设计的产品，市场内并没有。我们来提供解决方案" class="headerlink" title="1.根据客户的需求来设计的产品，市场内并没有。我们来提供解决方案"></a>1.根据客户的需求来设计的产品，市场内并没有。我们来提供解决方案</h6><hr>
+<h2 id="售前要懂有技术和能力"><a href="#售前要懂有技术和能力" class="headerlink" title="售前要懂有技术和能力"></a>售前要懂有技术和能力</h2><p>这里就不再详述。用一张思维导图更容易明白</p>
+<p><img src="https://i.loli.net/2020/05/28/zZ9DTVsxMeqrupy.png" alt></p>
+<hr>
+<h3 id="售前常用的软件"><a href="#售前常用的软件" class="headerlink" title="售前常用的软件"></a>售前常用的软件</h3><ol>
+<li>word：这是作为售前人员必备的软件之一</li>
+<li>Excel：管理线索和需求时才会用到</li>
+<li>PPT：这也是作为售前人员必备的软件之一</li>
+<li>Visio: 用于画流程图，架构图的软件</li>
+<li>MindMaster: 思维导图软件。可以帮自己整理思路等</li>
+<li>有道云笔记：收藏资料和工作中遇到的难点</li>
+<li>Axure：用于界面设计</li>
+</ol>
+<hr>
+<h3 id="文字太多会造成视觉疲劳-这里就用思维导图来展示"><a href="#文字太多会造成视觉疲劳-这里就用思维导图来展示" class="headerlink" title="文字太多会造成视觉疲劳,这里就用思维导图来展示"></a>文字太多会造成视觉疲劳,这里就用思维导图来展示</h3><h4 id="售前的具体工作示意图"><a href="#售前的具体工作示意图" class="headerlink" title="售前的具体工作示意图"></a>售前的具体工作示意图</h4><p><img src="https://i.loli.net/2020/05/28/olgiLzY8QBwb3SU.png" alt></p>
+<h4 id="售中具体工作示意图"><a href="#售中具体工作示意图" class="headerlink" title="售中具体工作示意图"></a>售中具体工作示意图</h4><p><img src="https://i.loli.net/2020/05/28/dIVXGU9zHqOs5a4.png" alt></p>
+<h4 id="售后具体工作示意图"><a href="#售后具体工作示意图" class="headerlink" title="售后具体工作示意图"></a>售后具体工作示意图</h4><p><img src="https://i.loli.net/2020/05/28/gs7ln2Yy9GboF4R.png" alt></p>
+<hr>
+<h3 id="最后做个售前工程师大体工作的总结"><a href="#最后做个售前工程师大体工作的总结" class="headerlink" title="最后做个售前工程师大体工作的总结"></a>最后做个售前工程师大体工作的总结</h3><h5 id="售前人员要求具备一个技术人员和销售人员两方面的素质，具体如下："><a href="#售前人员要求具备一个技术人员和销售人员两方面的素质，具体如下：" class="headerlink" title="售前人员要求具备一个技术人员和销售人员两方面的素质，具体如下："></a>售前人员要求具备一个技术人员和销售人员两方面的素质，具体如下：</h5><p>● 具有比较全面技术专业知识。熟悉当前IT的技术发展方向。</p>
+<p>● 熟悉自己的产品、熟悉本行业的业务、对本公司的开发能力、技术优势、劣势有比较清楚的认识。</p>
+<p>● 熟悉本行业的技术、产品动向、发展方向，了解同类产品及其竞争对手的情况和特点。</p>
+<p>● 能熟练使用文本和图形编辑器进行方案、标书的编写。</p>
+<p>● 熟悉项目招投标的一般程序。</p>
+<p>● 善于交流，有良好的沟通能力和技巧。</p>
 
       </div>
     </div>
@@ -147,12 +164,12 @@
 <div class="lx-navigation">
 	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2020/04/28/day7/">
+		<a class="copy" href="#">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Next</span>
-						<h3>第八篇文章</h3>
+						<h3>没有更新的文章</h3>
 					</div>
 				</div>
 			</div>
@@ -160,12 +177,12 @@
 	</div>
         <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2020/04/26/day5/">
+		<a class="copy" href="/2020/05/18/day19/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Prev</span>
-						<h3>第六篇文章</h3>
+						<h3>第二十篇文章</h3>
 					</div>
 				</div>
 			</div>
